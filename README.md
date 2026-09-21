@@ -2,6 +2,8 @@
 
 An industry-ready, edge IoT weighing system built for poultry farm management. Designed with **ESP32-S3**, **HX711 load cell amplifier**, **MQTT (HiveMQ WebSockets)**, **Google Apps Script**, and **Telegram Bot Integration**.
 
+Live Web Dashboard:** [https://pranavgholap2111-sys.github.io/Weighing_Scale/](https://pranavgholap2111-sys.github.io/Weighing_Scale/)
+
 ---
 
 ##  Key Features
