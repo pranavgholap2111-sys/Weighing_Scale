@@ -1,0 +1,56 @@
+               +----------------------------------+
+               |           ESP32-S3               |
+               |                                  |
+               |                            3.3V  |---+------------+
+               |                            GND   |---|-----+      |
+               |                                  |   |     |      |
+               |                           GPIO 1 |---+     |      |
+               |                           GPIO 2 |-+ |     |      |
+               |                          GPIO 21 |=| |     |      |
+               |                          GPIO 47 |/| |     |      |
+               +----------------------------------+ | |     |      |
+                                                    | |     |      |
+                                                    | |     |      |
+       +-----------------------+                    | |     |      |
+       |     HX711 Module      |                    | |     |      |
+       |                       |                    | |     |      |
+       |                  DOUT |--------------------+ |     |      |
+       |                   SCK |----------------------+     |      |
+       |                   VCC |----------------------------|------+
+       |                   GND |----------------------------+
+       |                       |
+       |    E+   E-   A-   A+  |
+       +-----+----+----+----+--+
+             |    |    |    |
+            RED  BLK  WHT  GRN
+             |    |    |    |
+       +-----+----+----+----+--+
+       |       LOAD CELL       |
+       +-----------------------+
+
+       +-----------------------+
+       |   I2C 16x2 LCD        |
+       |                       |
+       |                   VCC |----------------------------------+ (5V/3.3V)
+       |                   GND |----------------------------+     |
+       |                   SDA |---------------------+      |     |
+       |                   SCL |--------------+      |      |     |
+       +-----------------------+              |      |      |     |
+                                              |      |      |     |
+                                           GPIO47  GPIO21  GND   3.3V/5V 
+Circuit connection table:
+
+| Component              | Component Pin         | ESP32-S3 Pin       | Notes                          |
+| -----------------------| --------------------- | ------------------ | ------------------------------ |
+| **HX711 Amplifier**    | VCC                   | 3.3V               | Power supply                   |
+|                        | GND                   | GND                | Ground                         |
+|                        | DT (DOUT)             | GPIO 1             | Data signal                    |
+|                        | SCK                   | GPIO 2             | Clock signal                   |
+| **Load Cell to HX711** | Red Wire              | E+                 | Excitation positive            |
+|                        | Black Wire            | E-                 | Excitation negative            |
+|                        | White Wire            | A-                 | Signal negative                |
+|                        | Green Wire            | A+                 | Signal positive                |
+| **16x2 I2C LCD**       | VCC                   | 5V (or 3.3V)       | Check your LCD Backpack rating |
+|                        | GND                   | GND                | Ground                         |
+|                        | SDA                   | GPIO 21            | I2C Data                       |
+|                        | SCL                   | GPIO 47            | I2C Clock                      |
