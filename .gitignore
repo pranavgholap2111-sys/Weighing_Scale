@@ -1,0 +1,20 @@
+# Arduino & ESP32 Compiled Output
+build/
+bin/
+*.elf
+*.hex
+*.map
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# VS Code & IDE Local Settings
+.vscode/
+.idea/
+*.swp
+
+# Temporary & Swap Files
+*.tmp
+*~
