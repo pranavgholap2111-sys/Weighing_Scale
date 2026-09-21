@@ -1,10 +1,16 @@
-// --- CONFIGURATION ---
-var TELEGRAM_BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"; // Paste Token from @BotFather
-var TELEGRAM_CHAT_ID   = "YOUR_CHAT_ID_HERE";   // Paste Chat ID from @userinfobot
+// =========================================================================
+// CONFIGURATION (SECURE)
+// =========================================================================
+// 1. Fetches the bot token securely from Project Settings > Script Properties
+const scriptProperties = PropertiesService.getScriptProperties();
+const TELEGRAM_BOT_TOKEN = scriptProperties.getProperty('TELEGRAM_BOT_TOKEN');
+
+// 2. Chat ID is not a secret, so it remains here (or set your specific ID)
+const TELEGRAM_CHAT_ID = "YOUR_CHAT_ID_HERE"; 
 
 function doPost(e) {
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  var data = JSON.parse(e.postData.contents);
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const data = JSON.parse(e.postData.contents);
   
   // 1. Create headers if sheet is empty
   if (sheet.getLastRow() === 0) {
@@ -29,7 +35,7 @@ function doPost(e) {
 }
 
 function sendTelegramAlert(data) {
-  var message = "<b>Poultry Trade Receipt</b>\n\n" +
+  const message = "<b>Poultry Trade Receipt</b>\n\n" +
                 "<b>Trade ID:</b> " + data.trade_id + "\n" +
                 "<b>Date:</b> " + data.date + "\n" +
                 "<b>Time:</b> " + data.time + "\n" +
@@ -39,15 +45,15 @@ function sendTelegramAlert(data) {
                 "<b>Net Weight:</b> " + data.weight_kg + " kg\n" +
                 "------------------------------";
 
-  var url = "https://api.telegram.org/bot" + TELEGRAM_BOT_TOKEN + "/sendMessage";
+  const url = "https://api.telegram.org/bot" + TELEGRAM_BOT_TOKEN + "/sendMessage";
   
-  var payload = {
+  const payload = {
     "chat_id": TELEGRAM_CHAT_ID,
     "text": message,
     "parse_mode": "HTML"
   };
 
-  var options = {
+  const options = {
     "method": "post",
     "contentType": "application/json",
     "payload": JSON.stringify(payload)
