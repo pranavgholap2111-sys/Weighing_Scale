@@ -1,6 +1,6 @@
 // --- CONFIGURATION ---
-var TELEGRAM_BOT_TOKEN = "8694911950:AAHpNl-igbxSc5jH4qSRHytALW3ZNve7SC0"; // Paste Token from @BotFather
-var TELEGRAM_CHAT_ID   = "6063758362";   // Paste Chat ID from @userinfobot
+var TELEGRAM_BOT_TOKEN = "add_yours"; // Paste Token from @BotFather
+var TELEGRAM_CHAT_ID   = "add_yours";   // Paste Chat ID from @userinfobot
 
 function doPost(e) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
