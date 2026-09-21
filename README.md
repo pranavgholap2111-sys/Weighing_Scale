@@ -15,6 +15,11 @@ Live Web Dashboard:** [https://pranavgholap2111-sys.github.io/Weighing_Scale/](h
 * **On-Site QR Access:** Dynamic QR code on dashboard for fast mobile access to live trade logs.
 
 ---
+##  Circuit Wiring & Hardware Setup
+![Circuit Diagram](docs/circuit_diagram)
+
+##  Web Dashboard Preview
+![Dashboard Preview](docs/dashboard_preview.png)
 
 ##  System Architecture
 
