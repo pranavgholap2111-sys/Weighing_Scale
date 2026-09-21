@@ -5,7 +5,7 @@
   <title>Poultry Scale #01 - Smart Trade Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <!-- External Libraries (MQTT + QR Code Generator) -->
+  <!-- External Libraries -->
   <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   
@@ -105,11 +105,8 @@
     .btn-trade:disabled { background: #475569; cursor: not-allowed; box-shadow: none; }
 
     #logStatus { margin-top: 12px; font-weight: 600; font-size: 0.9rem; min-height: 20px; }
-
-    /* Divider */
     .divider { margin: 25px 0; border-top: 1px dashed #334155; }
 
-    /* QR Code & Direct Link Section */
     .qr-section {
       display: flex;
       flex-direction: column;
@@ -173,7 +170,7 @@
 
   <script>
     // =========================================================================
-    // CONFIGURATION
+    // CONFIGURATION - REPLACE WITH YOUR ACTUAL URLS
     // =========================================================================
     const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwouKiggkg7OePDQTQ-nX4Tw4mmcPtkwUYrZvpnPxfunQIKo7dy1ssjpGxW6Z6B3UNn0w/exec";
     const GOOGLE_SHEET_VIEW_URL = "https://script.google.com/u/0/home/projects/1mzfJ_8nDGK3DMS8nwQHLqf1hmCJUU_hqDJwjUn9LHdeS_NZVG9X2YiTN/edit"; 
