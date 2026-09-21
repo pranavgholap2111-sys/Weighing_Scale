@@ -1,11 +1,6 @@
-// =========================================================================
-// SCRIPT PROPERTIES (SECURE) - Fetch secrets stored in Project Settings
-// =========================================================================
-const scriptProperties = PropertiesService.getScriptProperties();
-const TELEGRAM_TOKEN = scriptProperties.getProperty('TELEGRAM_BOT_TOKEN');
-
-// The Chat ID is not a secret, so it is safe to keep here.
-const TELEGRAM_CHAT_ID = "8694911950";
+// --- CONFIGURATION ---
+var TELEGRAM_BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"; // Paste Token from @BotFather
+var TELEGRAM_CHAT_ID   = "YOUR_CHAT_ID_HERE";   // Paste Chat ID from @userinfobot
 
 function doPost(e) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
